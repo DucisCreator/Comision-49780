@@ -462,6 +462,12 @@ html{
     border-radius: 2rem;
     color: #ab0808;
 }
+.cotizador {
+    text-align: center;
+}
+h1 {
+    text-align: center;
+}
 @media (max-width: 767px){ /*formato teléfono*/
     .navegacion_cotizador li:hover a{
         background: #004d566b;
