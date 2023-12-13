@@ -3,8 +3,11 @@ function bienvenido(){
 }
 bienvenido()
 const consulta1 = prompt("En primer lugar, ¿qué tamaño de teléfono te gusta o acomoda, a: grande o b: pequeño? (escribe la letra de la opción)").toLowerCase()
+localStorage.setItem("tamaño", consulta1)
 const consulta2 = prompt("En segundo lugar, ¿prefieres a: potencia o b: buenas cámaras? (escribe la letra de la opción)").toLowerCase()
+localStorage.setItem("preferencia", consulta2)
 const consulta3 = prompt("En tercer lugar, ¿qué rango de precios buscas, a: hasta 300$, b: hasta 700$ o c: más de 700$? (escribe la letra de la opción)").toLowerCase()
+localStorage.setItem("precio", consulta3)
 
 const opciones = [
     {
@@ -69,7 +72,10 @@ const opciones = [
         especs3: "c"}
 ]
 
-function escoger(respuesta1, respuesta2, respuesta3){
+function escoger(){
+    const respuesta1 = localStorage.getItem("tamaño")
+    const respuesta2 = localStorage.getItem("preferencia")
+    const respuesta3 = localStorage.getItem("precio")
     const sugerencia = opciones.find((telefono) => {
         return (
             telefono.especs1 === respuesta1 
@@ -88,5 +94,6 @@ function escoger(respuesta1, respuesta2, respuesta3){
         cotizador.innerText = "Lo Siento, no encontramos una opción para ti";
         document.body.appendChild(cotizador);
     }
+    localStorage.clear()
 }
 escoger(consulta1, consulta2, consulta3)
