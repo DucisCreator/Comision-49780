@@ -18,34 +18,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Permissions-Policy" content="interest-cohort=()"/>
     <title>Cotizador celulares TechToday</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../index.js">
     <link rel="shortcut icon" href="../assets/img/2019-03-01.png">
 </head>
 <body class="pag-cotizador">
-    <header class="cotizador_home">
-        <h1>
-            <li><a href="../index.html"><img id="top" src="../assets/img/2019-03-01.png" alt="logo sitio" width="15%">Home</a>
-                <a href="./cotizador_telefonos.html"><img id="top" src="../assets/img/telefono-movil.png" alt="logo página" width="5%">Cotizador de Smartphones</a>
-            </li>
-        </h1>
-        <nav>
-            <ul class="navegacion_cotizador">
-                <li><a href="../pages/smartphones.html"><img src="../assets/img/telefono-movil.png" alt="smartphones" width="30%">Smartphones</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h2 class="cotizador">Bienvenido al cotizador de TechToday,</h2>
-        <div id="preguntas-respuestas" class="preguntas-respuestas"></div>
-        <div id="recomendacion" class="recomendacion"></div>
-        <button id="btnCotizar" onclick="main()">Iniciar Cotización</button>
-    </main>
-    <footer class="pie-pagina">
-        <div class="derechos">
-            <p>2023 - Todos los derechos reservados.</p>
-        </div>
-    </footer>
-    <script src="../index.js"></script>
+    <div id="app">
+        <header class="cotizador_home">
+            <h1>
+                <li><a href="../index.html"><img id="top" src="../assets/img/2019-03-01.png" alt="logo sitio" width="15%">Home</a>
+                    <a href="./cotizador_telefonos.html"><img id="top" src="../assets/img/telefono-movil.png" alt="logo página" width="5%">Cotizador de Smartphones</a>
+                </li>
+            </h1>
+            <nav>
+                <ul class="navegacion_cotizador">
+                    <li><a href="../pages/smartphones.html"><img src="../assets/img/telefono-movil.png" alt="smartphones" width="30%">Smartphones</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <script src="../index.js"></script>
+            <h2 class="cotizador">Bienvenido al cotizador de TechToday,</h2>
+            <div id="preguntas-respuestas" class="preguntas-respuestas"></div>
+            <div id="recomendacion" class="recomendacion"></div>
+            <button id="btnCotizar" onclick="main()">Iniciar Cotización</button>
+        </main>
+        <footer class="pie-pagina">
+            <div class="derechos">
+                <p>2023 - Todos los derechos reservados.</p>
+            </div>
+        </footer>
+        
+    </div>
 </body>
 </html>
