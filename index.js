@@ -131,4 +131,4 @@ const app = new Vue({
             localStorage.clear()
         }
     }
-});
+})

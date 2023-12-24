@@ -14,23 +14,23 @@
     <meta property="og:description" content=TechToday es el sitio y canal que te acerca a la tecnología, donde podrás encontrar noticias, detalles y asesoría en el mundo de la electrónica y vehículos.>
     <meta property="og:type" content=website>
     <meta property="og:image" content=https://www.instagram.com/p/Buc90XxhsVn/>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Permissions-Policy" content="interest-cohort=()"/>
     <title>Cotizador celulares TechToday</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <link rel="stylesheet" href="../css/style.css">
-    <script src="../index.js" defer></script>
     <link rel="stylesheet" href="../index.js">
     <link rel="shortcut icon" href="../assets/img/2019-03-01.png">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 </head>
 <body class="pag-cotizador">
     <div id="app">
         <header class="cotizador_home">
             <h1>
-                <li><a href="../index.html"><img id="top" src="../assets/img/2019-03-01.png" alt="logo sitio" width="15%">Home</a>
-                    <a href="./cotizador_telefonos.html"><img id="top" src="../assets/img/telefono-movil.png" alt="logo página" width="5%">Cotizador de Smartphones</a>
-                </li>
+                <ul>
+                    <li><a href="../index.html"><img id="top" src="../assets/img/2019-03-01.png" alt="logo sitio" width="15%">Home</a>
+                    </li>
+                    <li><a href="./cotizador_telefonos.html"><img id="top" src="../assets/img/telefono-movil.png" alt="logo página" width="5%">Cotizador de Smartphones</a>
+                    </li>
+                </ul>
             </h1>
             <nav>
                 <ul class="navegacion_cotizador">
@@ -41,8 +41,12 @@
         <main>
             <h2 class="cotizador">Bienvenido al cotizador de TechToday,</h2>
             <div id="preguntas-respuestas" class="preguntas-respuestas"></div>
-            <div id="recomendacion" class="recomendacion"></div>
-            <button id="btnCotizar" onclick="main()">Iniciar Cotización</button>
+            <div id="recomendacion" class="recomendacion">
+                <p>{{ recomendacionMensaje }}</p>
+                <img :src="recomendacionImagen" alt="Recomendación de smartphone">
+            </div>
+            <button id="btnCotizar" @click="realizarCotizacion">Iniciar Cotización</button>
+            
         </main>
         <footer class="pie-pagina">
             <div class="derechos">
