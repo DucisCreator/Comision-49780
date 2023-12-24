@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "inquirer": "^9.2.12"
+    "inquirer": "^9.2.12",
+    "vue": "^2.7.15"
   }
 }
