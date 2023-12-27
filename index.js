@@ -1,4 +1,3 @@
-/*import Vue from 'vue'*/
 const app = new Vue({
     el: '#app',
     data: {
@@ -25,7 +24,7 @@ const app = new Vue({
             this.preguntasRespuestas['Rango de precios'] = await this.consulta("En tercer lugar, ¿qué rango de precios buscas, a: hasta 300$, b: hasta 700$ o c: más de 700$? (escribe la letra de la opción)")
         },
         async cargarOpciones() {
-            return new Promise((resolve) => {
+        /*    return new Promise((resolve) => {
                 setTimeout(() => {
                     const opciones = [
                         {
@@ -106,6 +105,16 @@ const app = new Vue({
                     resolve()
                 }, 1000)
             })
+        */
+            try{
+                const response = await fetch('http://localhost:3000/opciones',{ //Para activar servidor, favor colocar node y la dirección hasta "server.js", por ejemplo C:\Users\JeanM\OneDrive\Bureau\proyecto-final\ProyectoJS-Juan_Rivero\API\server.js
+                    method: 'GET',
+                })
+                const opciones = await response.json()
+                localStorage.setItem("opciones", JSON.stringify(opciones))
+            }catch (error){
+                console.error('Error al cargar las opciones: ',error)
+            }
         },
         escoger() {
             const respuesta1 = this.preguntasRespuestas['Tamaño de teléfono']
